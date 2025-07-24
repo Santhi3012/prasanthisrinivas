@@ -1,1 +1,20 @@
+package prasanthi;
+
+public class VariablesDemo {
+	int c = 20;
+	void show()
+	{
+		int a = 10;
+		System.out.println("a val is: "+a);
+	}
+	public static void main(String[] args)
+	{
+		int b = 30;
+		System.out.println("b val is: "+b);
+		VariablesDemo vd = new VariablesDemo();
+		vd.show();
+		System.out.println("c val is: "+vd.c);
+	}
+
+}
 
