@@ -1,1 +1,50 @@
+package prasanthi;
+
+import java.util.Scanner;
+import java.lang.String;
+
+//Getting customer details
+public class cust{
+	
+	//fields
+	int cid;
+	String cname;
+	String address;
+	long mobilenumber;
+	
+	//methods
+	void setCustomerDetails(int a,String b,String c,long d)
+	{
+		cid = a;
+		cname = b;
+		address = c;
+		mobilenumber = d;
+	}
+	
+	void getCustomerDetails()
+	{
+		System.out.println("cid is: "+cid);
+		System.out.println("cname is: "+cname);
+		System.out.println("address is: "+address);
+		System.out.println("mobilenumber is: "+mobilenumber);
+		
+	}
+	public static void main(String[] args)
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("welcome to icici bank portal!!!");
+		System.out.println("please register with your details!!!");
+		System.out.println("please enter cid:");
+		int a = sc.nextInt();
+		System.out.println("please enter cname:");
+		String b = sc.next();
+		System.out.println("please enter address:");
+		String c = sc.next();
+		System.out.println("please enter mobilenumber:");
+		long d = sc.nextLong();
+		customer c1 = new customer();
+		c1.setCustomerDetails(a, b, c, d);
+		c1.getCustomerDetails();
+	}
+}
 
