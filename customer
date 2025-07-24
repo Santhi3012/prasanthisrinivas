@@ -1,1 +1,37 @@
+package prasanthi;
+//Getting customer details
+public class customer {
+	
+	//fields
+	int cid;
+	String cname;
+	String address;
+	long mobilenumber;
+	
+	//methods
+	void setCustomerDetails(int a,String b,String c,long d)
+	{
+		cid = a;
+		cname = b;
+		address = c;
+		mobilenumber = d;
+	}
+	
+	void getCustomerDetails()
+	{
+		System.out.println("cid is: "+cid);
+		System.out.println("cname is: "+cname);
+		System.out.println("address is: "+address);
+		System.out.println("mobilenumber is: "+mobilenumber);
+		
+	}
+	public static void main(String[] args)
+	{
+		customer c= new customer();
+		c.setCustomerDetails(0, null, null, 0);
+		c.getCustomerDetails();
+		
+	}
+
+}
 
