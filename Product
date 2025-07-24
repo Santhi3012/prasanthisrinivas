@@ -1,1 +1,8 @@
+package prasanthi;
+
+public interface Product {
+	void getProductDetails();
+	void offerDetails();
+	
+}
 
