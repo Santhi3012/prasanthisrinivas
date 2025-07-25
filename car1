@@ -1,0 +1,28 @@
+package prasanthi;
+
+public class car1 implements Vehicle1 {
+	
+	
+		public void start() {
+			System.out.println("open the car doors");
+			System.out.println("turn the key");
+		}
+		
+		public void stop() {
+			System.out.println("turn key left");
+			System.out.println("Close the doors");
+		}
+		 public void offerDetails()//concrete method
+		{
+			System.out.println("20% off on every product");
+		}
+		public static void main (String[] args) {
+			//create object
+			car1 c= new car1();
+			c.start();
+			c.stop();
+			c.offerDetails();
+		}
+	}
+
+
