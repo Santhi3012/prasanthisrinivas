@@ -1,1 +1,14 @@
+package prasanthi;
+
+public abstract class Vehicle {
+	
+	int a = 20;
+	abstract void start();//abstract method
+	abstract void stop();
+	void offerDetails()//concrete method
+	{
+		System.out.println("20% off on every product");
+	}
+
+}
 
