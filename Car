@@ -1,0 +1,23 @@
+package prasanthi;
+
+public class Car extends Vehicle {
+		
+		@Override
+		void start() {
+			System.out.println("open the car doors");
+			System.out.println("turn the key");
+		}
+		@Override
+		void stop() {
+			System.out.println("turn key left");
+			System.out.println("Close the doors");
+		}
+		public static void main (String[] args) {
+			//create object
+			Car c = new Car();
+			c.start();
+			c.stop();
+			c.offerDetails();
+		}
+	}
+
