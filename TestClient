@@ -28,3 +28,90 @@ public class TestClient {
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Testclient with details
+
+
+package src;
+
+import java.util.Scanner;
+
+public class TestClient {
+
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        UserImpl userobj = new UserImpl();
+        WorkoutImpl workoutobj = new WorkoutImpl();
+
+        System.out.println("Welcome to Colorszym App");
+        System.out.println("Please register with your details");
+
+        // Registration
+        System.out.print("Please enter your first name: ");
+        String fname = sc.nextLine();
+
+        System.out.print("Please enter your last name: ");
+        String lname = sc.nextLine();
+
+        System.out.print("Please enter your username: ");
+        String username = sc.nextLine();
+
+        System.out.print("Please enter your password: ");
+        String password = sc.nextLine();
+
+        User user = new User(fname, lname, username, password);
+        userobj.register(user, 0);
+
+        System.out.println("Thank you ... your details are with us");
+
+        // Login
+        System.out.println("\nPlease login with your details");
+        System.out.print("Please enter your username: ");
+        String loginUser = sc.nextLine();
+
+        System.out.print("Please enter your password: ");
+        String loginPass = sc.nextLine();
+
+        boolean result = userobj.login(loginUser, loginPass);
+
+        if (result) {
+            System.out.println(fname + "... welcome to Colorszym");
+            System.out.println("Please follow the below menu for your fitness:\n");
+
+            // Menu or Workout Options
+            WorkOut workout = new WorkOut("cardio", "treadmill", 0, 10, "fitness");
+            WorkOut workout1 = new WorkOut("muscle", "dumbbell", 20, 10, "strength");
+
+            workoutobj.addWorkOut(workout, 0);
+            workoutobj.addWorkOut(workout1, 1);
+
+            WorkOut[] workouts = workoutobj.displayWorkOuts();
+            for (WorkOut work : workouts) {
+                if (work != null) {
+                    System.out.println(work);
+                }
+            }
+
+        }
+	else 
+	{
+        	System.out.println("Login failed! Please check your username and password.");
+   	}
+        
+    }
+}
+
