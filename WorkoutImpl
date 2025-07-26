@@ -1,0 +1,26 @@
+package src;
+
+public class WorkoutImpl implements IWorkOut {
+	
+	//Array
+	private WorkOut workouts[];
+	
+	//constructor
+	public WorkoutImpl()
+	{
+		workouts = new WorkOut[5];
+	}
+
+	@Override
+	public void addWorkOut(WorkOut workout, int index) {
+		// business logic
+		workouts[index]=workout;
+		
+	}
+
+	@Override
+	public WorkOut[] displayWorkOuts() {
+		return workouts;
+	}
+
+}
