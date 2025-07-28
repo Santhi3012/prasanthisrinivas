@@ -1,0 +1,71 @@
+package com.string;
+
+public class StringDemo {
+
+	public static void main(String[] args) {
+		
+		//literal syntax
+		String sName  ="Santhi";//scp = string constant pool
+		System.out.println(sName);
+		
+		//object syntax
+		String sName1 = new String("Santhi");//heap area
+		System.out.println(sName1);
+		
+		String sName2 = "Santhi";
+		String sName3 = new String("Santhi");
+		
+		//String is immutable
+		sName.concat("Gangavarapu");
+		System.out.println(sName);
+		
+		//To implement mutable
+    //StringBuffer,StringBuilder
+		StringBuffer sb = new StringBuffer("Santhi");//not thread safe
+		sb.append(" Gangavarapu");
+		System.out.println(sb);
+		
+		//String Methods
+		//Conacate
+		//1.+,2.concat()
+		System.out.println(sName+" " +sName1);
+		
+		//How to get a part of a string
+		//subString()
+		String course = "Java Full Stack";
+		System.out.println(course.substring(5));
+		System.out.println(course.substring(5,9));
+		
+		//Replace
+		System.out.println(course.replace("Full Stack","FSD"));
+		
+		//Compare
+		//==,equals()
+		System.out.println(sName==sName1);//== focus on both values and reference
+		System.out.println(sName.equals(sName1));//equals() focus on only value
+		
+		//To get index value
+		//indexOf().lastIndexOf()
+		String msg = "Welcome to Rise Welcome Java FSD";
+		System.out.println(msg.indexOf("Welcome"));
+		System.out.println(msg.lastIndexOf("Welcome"));
+		
+		//To check part of a string
+		//contains()
+		System.out.println(msg.contains("Java"));
+		//Trim
+		String product = " Realme ";
+		System.out.println(product.length());
+		System.out.println(product.trim());
+		System.out.println(product.trim().length());
+		
+		//New methods of string
+		//startWith(),endsWith()
+		System.out.println(msg.startsWith("Welcome"));
+		System.out.println(msg.endsWith("FSD"));
+		
+		
+	}
+	
+
+}
