@@ -1,0 +1,28 @@
+package com.thread;
+
+class MovieNames implements Runnable
+{
+	public void run() 
+	{
+		if(Thread.currentThread().getName().equals("santhi"))
+		{
+			for(int i = 1;i<=10;i++)
+			{
+				System.out.println("santhi movie "+i);
+			}//for
+		}//if
+		else
+		{
+			for(int j = 1;j<=10;j++)
+			{
+				System.out.println("cherry movie "+j);
+			}//for
+		}//else
+	}
+	public static void main(String[] args)
+	{
+		MovieNames mn = new MovieNames();
+		Thread t = new Thread(mn,"santhi");
+		t.start();
+	}
+}
