@@ -1,0 +1,72 @@
+package com.thread;
+
+import java.util.Scanner;
+
+class Account{
+	//fields
+	long accno;
+	int bal;
+	
+	//constructor
+	Account(long accno,int bal){
+		this.accno = accno;
+		this.bal = bal;
+	}
+	public boolean issufficientBalance(int amount){
+		if(bal >=  amount ) {
+			return true;
+		}
+		else {
+			return false;
+		}
+		
+		
+	}//method issufficientBalance() close
+	public void withdraw(int amount) {
+		 bal = bal - amount;
+		System.out.println("Withdrawl Amount :"+amount);
+		System.out.println("Current Balance :"+bal);
+	
+	}//closing for withdraw()
+	
+}//closing for Account class
+class Customer implements Runnable{
+	//fields
+	String cname;
+	Account acc;
+	//constructor
+	Customer(String cname,Account acc){
+		this.cname = cname;
+		this.acc = acc;
+	}//closing for constructor
+	public void run()
+	{
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Welcome to SBI..");
+		//block
+		synchronized(acc) {
+		System.out.println(cname+" Please Enter amount to withdraw");
+		int amt = sc.nextInt();
+		if(acc.issufficientBalance(amt)) {
+			acc.withdraw(amt);
+		}
+		else {
+			System.out.println("Sorry insufficientBalance");
+			}
+		}//end of synchronization
+	}
+}
+
+public class SynchronizationRealDemo {
+
+	public static void main(String[] args) {
+		Account ac = new Account(123456,1000);
+		Customer c1 = new Customer("Santhi",ac);
+		Customer c2 = new Customer("Cherry",ac);
+		Thread t1 = new Thread(c1);
+		Thread t2 = new Thread(c2);
+		t1.start();
+		t2.start();
+	}
+
+}
