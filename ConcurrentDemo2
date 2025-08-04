@@ -1,0 +1,43 @@
+package com.io;
+// Step1:Implement from runnable interface
+class Demo extends Thread {
+	//method
+	public void run() {
+		for(int i=1;i<=10;i++){
+			System.out.println("Samsung model: "+i);
+		}
+	}
+}
+public class ConcurrentDemo2 extends Thread{
+	//method
+	//override run method
+	 public void run() {
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println("Realme model: "+i);
+		}
+		
+	}
+	public static void main(String[] args) {	
+		//create object
+		ConcurrentDemo2 cd = new ConcurrentDemo2();
+		
+		//take the support of thread class
+		Thread t = new Thread(cd); //runnable target
+		
+		//Step3:call run() method by using start
+		t.start();
+			
+		Demo d = new Demo();
+		d.start();
+		
+		//to count no of active threads
+		System.out.println(Thread.activeCount());
+		
+		for(int i=1;i<=10;i++)
+		{
+			System.out.println("OnePlus model: "+i);
+		}	
+	}
+
+}
